@@ -1,5 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import router from "../router";
+
+import GoBack from "../components/GoBack.vue";
 
 let container = ref(null);
 
@@ -9,10 +12,24 @@ onMounted(() => {
     { duration: 1000, fill: "forwards" }
   );
 });
+
+function goHome() {
+  container.value.animate(
+    { opacity: `0` },
+    { duration: 1000, fill: "forwards" }
+  ).onfinish = () => {
+    // Call your function here
+    router.push("/");
+  };
+}
 </script>
 
 <template>
-  <div class="container" ref="container"><h1>Work</h1></div>
+  <div class="container" ref="container">
+    <h1>Work</h1>
+
+    <GoBack @goHome="goHome()" />
+  </div>
 </template>
 
 <style scoped>

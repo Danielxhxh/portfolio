@@ -1,10 +1,14 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import router from "../router";
+
 import Contacts from "../components/Contacts.vue";
 import Skills from "../components/Skills.vue";
 import Education from "../components/Education.vue";
 import Experience from "../components/Experience.vue";
 import Personal from "../components/Personal.vue";
+import BigSpinner from "../components/BigSpinner.vue";
+import GoBack from "../components/GoBack.vue";
 
 let container = ref(null);
 
@@ -14,11 +18,21 @@ onMounted(() => {
     { duration: 1000, fill: "forwards" }
   );
 });
+
+function goHome() {
+  container.value.animate(
+    { opacity: `0` },
+    { duration: 1000, fill: "forwards" }
+  ).onfinish = () => {
+    // Call your function here
+    router.push("/");
+  };
+}
 </script>
 
 <template>
   <div class="container" ref="container">
-    <div class="left">p</div>
+    <div class="left"><BigSpinner /></div>
     <div class="right">
       <h1>
         I am a passionate Full Stack Developer with a keen interest in
@@ -36,6 +50,7 @@ onMounted(() => {
       <div class="divider"></div>
       <Contacts />
       <div class="divider"></div>
+      <GoBack @goHome="goHome()" />
     </div>
   </div>
 </template>
@@ -50,7 +65,6 @@ onMounted(() => {
 .left {
   width: 40%;
   position: relative;
-  background-color: var(--primary);
 }
 .right {
   width: 60%;
@@ -58,7 +72,7 @@ onMounted(() => {
 }
 
 .divider {
-  height: 6em;
+  height: 3em;
 }
 
 @media (max-width: 800px) {
