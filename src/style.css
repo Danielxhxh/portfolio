@@ -27,4 +27,32 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  user-select: none;
+}
+
+h3 {
+  color: #646465;
+}
+
+li {
+  list-style: none;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0, var(--primary)),
+    color-stop(0.86, var(--secondary))
+  );
 }

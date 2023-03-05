@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import router from "../router";
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -47,6 +47,11 @@ onMounted(() => {
   };
 });
 
+onBeforeUnmount(() => {
+  document.onpointermove = null;
+});
+
+// Takes care of the animations right before changing the path
 function moveTo(path) {
   work.value.animate(
     { color: `var(--bg-color)` },
@@ -80,11 +85,7 @@ function moveTo(path) {
   </div>
 </template>
 
-<style>
-html {
-  overflow: hidden;
-}
-
+<style scoped>
 #name {
   font-size: 4em;
   font-weight: 700;
