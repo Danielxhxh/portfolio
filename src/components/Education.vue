@@ -1,21 +1,21 @@
 <script setup></script>
 <template>
-  <h1>Education</h1>
+  <h1 class="hidden-scroll">Education</h1>
 
   <ul>
-    <li>
+    <li class="hidden-scroll">
       <h2>
         Bachelor of Computer Science<br />University of Rome "Tor Vergata"
       </h2>
       <h3>2019 - 2022</h3>
     </li>
     <br />
-    <li>
+    <li class="hidden-scroll">
       <h2>High School Diploma<br />Gjimnazi "Aleksander Moisiu"</h2>
       <h3>2016 - 2019</h3>
     </li>
     <br />
-    <li>
+    <li class="hidden-scroll">
       <h2>English course<br />British Centre Language Institute</h2>
       <h3>2014 - 2017</h3>
     </li>

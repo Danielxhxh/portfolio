@@ -1,8 +1,8 @@
 <script setup></script>
 <template>
-  <h1>Contacts</h1>
+  <h1 class="hidden-scroll">Contacts</h1>
 
-  <div class="cards-group">
+  <div class="cards-group hidden-scroll">
     <div class="card">
       <i class="pi pi-linkedin"></i>
       <a href="https://www.linkedin.com/in/daniel-xhakalliu/" target="_blank"

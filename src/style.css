@@ -38,6 +38,19 @@ li {
   list-style: none;
 }
 
+/* Cool Animation on scroll */
+.hidden-scroll {
+  opacity: 0;
+  filter: blur(3px);
+  transition: all 1s;
+}
+
+.show-scroll {
+  opacity: 1;
+  filter: blur(0);
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar-track {
   background-color: var(--bg-color);
 }
@@ -55,4 +68,10 @@ li {
     color-stop(0, var(--primary)),
     color-stop(0.86, var(--secondary))
   );
+}
+
+@media (prefers-reduced-motion) {
+  .hidden-scroll {
+    transition: none;
+  }
 }

@@ -1,52 +1,62 @@
 <script setup></script>
 <template>
-  <h1>Skills</h1>
-  <h3>Programming languages</h3>
-  <div class="cards-group">
-    <div class="card first" style="background-color: #6096b4">
-      <h3>JavaScript</h3>
-    </div>
-    <div class="card second" style="background-color: #93bfcf">
-      <h3>Java</h3>
-    </div>
-    <div class="card third" style="background-color: #bdcdd6">
-      <h3>Python</h3>
-    </div>
-    <div class="card fourth" style="background-color: #eee9da"><h3>C</h3></div>
-  </div>
-  <h3>Frameworks and databases</h3>
-  <div class="cards-group">
-    <div class="card first" style="background-color: #d7e9b9">
-      <h3>Vue 3</h3>
-    </div>
-    <div class="card second" style="background-color: #fffbac">
-      <h3>MongoDB</h3>
-    </div>
-    <div class="card third" style="background-color: #ffd495">
-      <h3>React</h3>
-    </div>
-    <div class="card fourth" style="background-color: #faab78">
-      <h3>MySQL</h3>
+  <h1 class="hidden-scroll">Skills</h1>
+  <div class="hidden-scroll">
+    <h3>Programming languages</h3>
+    <div class="cards-group">
+      <div class="card first" style="background-color: #6096b4">
+        <h3>JavaScript</h3>
+      </div>
+      <div class="card second" style="background-color: #93bfcf">
+        <h3>Java</h3>
+      </div>
+      <div class="card third" style="background-color: #bdcdd6">
+        <h3>Python</h3>
+      </div>
+      <div class="card fourth" style="background-color: #eee9da">
+        <h3>C</h3>
+      </div>
     </div>
   </div>
-  <h3>Others</h3>
-  <div class="cards-group">
-    <div class="card first" style="background-color: #f8ede3"><h3>AWS</h3></div>
-    <div class="card second" style="background-color: #dfd3c3">
-      <h3>Linux</h3>
+  <div class="hidden-scroll">
+    <h3>Frameworks and databases</h3>
+    <div class="cards-group">
+      <div class="card first" style="background-color: #d7e9b9">
+        <h3>Vue 3</h3>
+      </div>
+      <div class="card second" style="background-color: #fffbac">
+        <h3>MongoDB</h3>
+      </div>
+      <div class="card third" style="background-color: #ffd495">
+        <h3>React</h3>
+      </div>
+      <div class="card fourth" style="background-color: #faab78">
+        <h3>MySQL</h3>
+      </div>
     </div>
-    <div class="card third" style="background-color: #d0b8a8">
-      <h3>REST API</h3>
-    </div>
-    <div class="card fourth" style="background-color: #dba39a">
-      <h3>Git</h3>
+  </div>
+  <div class="hidden-scroll">
+    <h3>Others</h3>
+    <div class="cards-group">
+      <div class="card first" style="background-color: #f8ede3">
+        <h3>AWS</h3>
+      </div>
+      <div class="card second" style="background-color: #dfd3c3">
+        <h3>Linux</h3>
+      </div>
+      <div class="card third" style="background-color: #d0b8a8">
+        <h3>REST API</h3>
+      </div>
+      <div class="card fourth" style="background-color: #dba39a">
+        <h3>Git</h3>
+      </div>
     </div>
   </div>
 </template>
 <style scoped>
 .cards-group {
   width: 100%;
-  height: 6%;
+  aspect-ratio: 4/1;
   position: relative;
 }
 

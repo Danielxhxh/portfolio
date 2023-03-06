@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-  <h1>About me...</h1>
-  <h3>
+  <h1 class="hidden-scroll">About me...</h1>
+  <h3 class="hidden-scroll">
     <ul>
       <li>I was born on January 7th, 2001 in Italy.</li>
       <li>I moved to Albania at the age of 7.</li>

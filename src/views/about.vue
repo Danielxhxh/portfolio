@@ -8,6 +8,7 @@ import Education from "../components/Education.vue";
 import Experience from "../components/Experience.vue";
 import Personal from "../components/Personal.vue";
 import BigSpinner from "../components/BigSpinner.vue";
+import TextAnimation from "../components/TextAnimation.vue";
 import GoBack from "../components/GoBack.vue";
 
 let container = ref(null);
@@ -17,6 +18,20 @@ onMounted(() => {
     { opacity: `1` },
     { duration: 1000, fill: "forwards" }
   );
+
+  // Animation on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show-scroll");
+      } else {
+        entry.target.classList.remove("show-scroll");
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll(".hidden-scroll");
+  hiddenElements.forEach((el) => observer.observe(el));
 });
 
 function goHome() {
@@ -32,24 +47,26 @@ function goHome() {
 
 <template>
   <div class="container" ref="container">
-    <div class="left"><BigSpinner /></div>
+    <div class="left"><BigSpinner /> <TextAnimation /></div>
     <div class="right">
       <h1>
         I am a passionate Full Stack Developer with a keen interest in
         technology and a strong desire to learn.
       </h1>
 
-      <div class="divider"></div>
-      <Skills />
-      <div class="divider"></div>
-      <Experience />
-      <div class="divider"></div>
-      <Education />
-      <div class="divider"></div>
-      <Personal />
-      <div class="divider"></div>
-      <Contacts />
-      <div class="divider"></div>
+      <div class="section">
+        <Skills />
+      </div>
+      <div class="section">
+        <Experience />
+      </div>
+      <div class="section">
+        <Education />
+      </div>
+      <div class="section">
+        <Personal />
+      </div>
+      <div class="section"><Contacts /></div>
       <GoBack @goHome="goHome()" />
     </div>
   </div>
@@ -58,21 +75,24 @@ function goHome() {
 <style scoped>
 .container {
   display: flex;
-  justify-content: stretch;
+  /* justify-content: stretch; */
   opacity: 0;
 }
 
 .left {
   width: 40%;
+  background-image: linear-gradient(to right, var(--primary), var(--bg-color));
+  z-index: -5;
   position: relative;
 }
 .right {
   width: 60%;
   padding: 10%;
+  padding-bottom: 0;
 }
 
-.divider {
-  height: 3em;
+.section {
+  margin: 15em auto 3em auto;
 }
 
 @media (max-width: 800px) {
