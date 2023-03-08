@@ -8,8 +8,8 @@ export default createRouter({
       component: () => import("../views/home.vue"),
     },
     {
-      path: "/work",
-      component: () => import("../views/work.vue"),
+      path: "/projects",
+      component: () => import("../views/projects.vue"),
     },
     {
       path: "/about",

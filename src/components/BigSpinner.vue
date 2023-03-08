@@ -1,9 +1,7 @@
 <script setup></script>
 <template>
   <div class="spinner">
-    <div class="spinner1">
-      <div class="star"></div>
-    </div>
+    <div class="spinner1"></div>
   </div>
 </template>
 <style scoped>
@@ -22,14 +20,6 @@
   z-index: -1;
 }
 
-.star {
-  width: 10%;
-  aspect-ratio: 1;
-  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
-  animation: spinner-animation 15s linear infinite;
-  border-radius: 50%;
-  z-index: -2;
-}
 .spinner1 {
   background-color: var(--bg-color);
   width: 100%;

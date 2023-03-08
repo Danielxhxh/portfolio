@@ -26,7 +26,7 @@ function goHome() {
 
 <template>
   <div class="container" ref="container">
-    <h1>Work</h1>
+    <h1>Projects</h1>
 
     <GoBack @goHome="goHome()" />
   </div>

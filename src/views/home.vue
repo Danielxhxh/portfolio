@@ -5,11 +5,13 @@ import router from "../router";
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 const blob = ref(null);
-const work = ref(null);
+const projects = ref(null);
 const about = ref(null);
 const name = ref("DANIEL XHAKALLIU");
 
 onMounted(() => {
+  document.documentElement.style.overflow = "hidden";
+
   //The moment the page loads, make the blob appear
   blob.value.animate(
     { height: `36vmax` },
@@ -17,7 +19,12 @@ onMounted(() => {
   );
 
   // Used to make the blob follow the mouse
-  document.onpointermove = (event) => {
+  window.onpointermove = (event) => {
+    const blobWidth = blob.value.offsetWidth;
+    const blobHeight = blob.value.offsetHeight;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
     const { clientX, clientY } = event;
 
     blob.value.animate(
@@ -48,12 +55,13 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
+  document.documentElement.style.overflow = "auto";
   document.onpointermove = null;
 });
 
 // Takes care of the animations right before changing the path
 function moveTo(path) {
-  work.value.animate(
+  projects.value.animate(
     { color: `var(--bg-color)` },
     { duration: 1000, fill: "forwards" }
   );
@@ -79,7 +87,7 @@ function moveTo(path) {
     <h1 id="name">{{ name }}</h1>
 
     <div class="menu">
-      <h2 @click="moveTo('/work')" ref="work">Work</h2>
+      <h2 @click="moveTo('/projects')" ref="projects">Projects</h2>
       <h2 @click="moveTo('/about')" ref="about">About</h2>
     </div>
   </div>
