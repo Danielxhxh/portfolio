@@ -8,6 +8,8 @@ const blob = ref(null);
 const projects = ref(null);
 const about = ref(null);
 const name = ref("DANIEL XHAKALLIU");
+const projectsButton = ref("PROJECTS");
+const aboutButton = ref("ABOUT");
 
 onMounted(() => {
   document.documentElement.style.overflow = "hidden";
@@ -52,6 +54,44 @@ onMounted(() => {
       iterations += 1 / 3;
     }, 30);
   };
+
+  // The cool effect on projects
+  document.getElementById("projects").onmouseover = (event) => {
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+      projectsButton.value = projectsButton.value
+        .split("")
+        .map((letter, index) => {
+          if (index < iterations) return "PROJECTS"[index];
+          else return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iterations >= name.value.length) clearInterval(interval);
+
+      iterations += 1 / 3;
+    }, 30);
+  };
+
+  // The cool effect on about
+  document.getElementById("about").onmouseover = (event) => {
+    let iterations = 0;
+
+    const interval = setInterval(() => {
+      aboutButton.value = aboutButton.value
+        .split("")
+        .map((letter, index) => {
+          if (index < iterations) return "ABOUT"[index];
+          else return letters[Math.floor(Math.random() * 26)];
+        })
+        .join("");
+
+      if (iterations >= name.value.length) clearInterval(interval);
+
+      iterations += 1 / 3;
+    }, 30);
+  };
 });
 
 onBeforeUnmount(() => {
@@ -87,8 +127,12 @@ function moveTo(path) {
     <h1 id="name">{{ name }}</h1>
 
     <div class="menu">
-      <h2 @click="moveTo('/projects')" ref="projects">Projects</h2>
-      <h2 @click="moveTo('/about')" ref="about">About</h2>
+      <h2 @click="moveTo('/projects')" ref="projects" id="projects">
+        {{ projectsButton }}
+      </h2>
+      <h2 @click="moveTo('/about')" ref="about" id="about">
+        {{ aboutButton }}
+      </h2>
     </div>
   </div>
 </template>
