@@ -1,14 +1,14 @@
 <script setup></script>
 <template>
-  <h1 class="hidden-scroll">Working Experience</h1>
+  <h1>Working Experience</h1>
 
   <ul>
-    <li class="hidden-scroll">
+    <li>
       <h2>Full Stack Developer<br />Freelancer</h2>
       <h3>2023 - Current</h3>
     </li>
     <br />
-    <li class="hidden-scroll">
+    <li>
       <h2>
         Full Stack Developer<br />Unità di Ricerca CNIT di Roma "Tor Vergata"
       </h2>

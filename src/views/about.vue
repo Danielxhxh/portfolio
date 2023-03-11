@@ -54,19 +54,19 @@ function goHome() {
         technology and a strong desire to learn.
       </h1>
 
-      <div class="section">
+      <div class="section hidden-scroll">
         <Skills />
       </div>
-      <div class="section">
+      <div class="section hidden-scroll">
         <Experience />
       </div>
-      <div class="section">
+      <div class="section hidden-scroll">
         <Education />
       </div>
-      <div class="section">
+      <div class="section hidden-scroll">
         <Personal />
       </div>
-      <div class="section"><Contacts /></div>
+      <div class="section hidden-scroll"><Contacts /></div>
       <GoBack @goHome="goHome()" />
     </div>
   </div>

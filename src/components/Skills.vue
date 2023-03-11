@@ -1,7 +1,7 @@
 <script setup></script>
 <template>
-  <h1 class="hidden-scroll">Skills</h1>
-  <div class="hidden-scroll">
+  <h1>Skills</h1>
+  <div>
     <h3>Programming languages</h3>
     <div class="cards-group">
       <div class="card first" style="background-color: #6096b4">
@@ -18,7 +18,7 @@
       </div>
     </div>
   </div>
-  <div class="hidden-scroll">
+  <div>
     <h3>Frameworks and databases</h3>
     <div class="cards-group">
       <div class="card first" style="background-color: #d7e9b9">
@@ -35,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="hidden-scroll">
+  <div>
     <h3>Others</h3>
     <div class="cards-group">
       <div class="card first" style="background-color: #f8ede3">
